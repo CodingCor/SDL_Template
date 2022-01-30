@@ -1,0 +1,21 @@
+set(SDL2_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/lib/SDL2/include)
+
+if(UNIX AND NOT APPLE)
+    message(STATUS LINUX)
+    list(APPEND SDL2_LIBRARIES ${CMAKE_CURRENT_SOURCE_DIR}/lib/SDL2/bin/libSDL2.so)
+    # SDL Image is also in Folder
+    list(APPEND SDL2_LIBRARIES ${CMAKE_CURRENT_SOURCE_DIR}/lib/SDL2/bin/libSDL2_image.so)
+endif()
+if(WIN32)
+    message(STATUS WINDOWS)
+    # Support both 32 and 64 bit builds
+    if (${CMAKE_SIZEOF_VOID_P} MATCHES 8)
+        list(APPEND SDL2_LIBRARIES ${CMAKE_CURRENT_LIST_DIR}/lib/SDL2/bin/x64/SDL2.dll)
+        list(APPEND SDL2_LIBRARIES ${CMAKE_CURRENT_LIST_DIR}/lib/SDL2/bin/x64/SDL2main.dll)
+        list(APPEND SDL2_LIBRARIES ${CMAKE_CURRENT_SOURCE_DIR}/lib/SDL2/bin/x64/libSDL2_image.dll)
+    else ()
+        list(APPEND SDL2_LIBRARIES ${CMAKE_CURRENT_LIST_DIR}/lib/SDL2/bin/x86/SDL2.dll)
+        list(APPEND SDL2_LIBRARIES ${CMAKE_CURRENT_LIST_DIR}/lib/SDL2/bin/x86/SDL2main.dll)
+        list(APPEND SDL2_LIBRARIES ${CMAKE_CURRENT_SOURCE_DIR}/lib/SDL2/bin/x86/libSDL2_image.dll)
+    endif ()
+endif()
