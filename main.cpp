@@ -15,7 +15,7 @@ int main(int argc, char *argv[]){
     }
     //create Window
     window = SDL_CreateWindow(
-            "SDL Tutorial",
+            "SDL Tutorial FindSDL2.cmake Module works",
             SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 
             SCREEN_WIDTH, SCREEN_HEIGHT,
             0);

@@ -2,6 +2,8 @@
 cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+#export compile commands 
+set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
 # Variables
 set(BUILDNAME SDL_TEMPLATE)
@@ -11,7 +13,8 @@ project (SDL_TEMPLATE VERSION 1.0)
 
 # Add all cmake Modules
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
-include(sdl2)
+#include(sdl2)
+find_package(SDL2)
 
 # SET SOURCE Files from /src here
 set(SOURCES 
@@ -25,6 +28,6 @@ add_executable(${BUILDNAME} ${SOURCES})
 target_include_directories(${BUILDNAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # link SDL2 to programm
-target_include_directories(${BUILDNAME} PUBLIC ${SDL2_INCLUDE})
+target_include_directories(${BUILDNAME} PUBLIC ${SDL2_INCLUDE_DIRS})
 target_link_libraries(${BUILDNAME} PUBLIC ${SDL2_LIBRARIES})
 
