@@ -1,6 +1,7 @@
 # SDL2_Template
 
 Uses *Ninja* to build the Project
+Only the Libraries for dynamic Builds are proviced
 
 ## Linux Build
 
