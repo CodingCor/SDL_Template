@@ -1,3 +1,4 @@
 build/
+!build/.gitignore
 .ccls
 compile_commands.json 
