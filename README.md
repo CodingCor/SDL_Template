@@ -1,6 +1,6 @@
 # SDL2_Template
 
-Uses *Ninja* to build the Project
+Uses **Ninja** to build the Project
 Only the Libraries for dynamic Builds are proviced
 
 ## Linux Build
@@ -24,7 +24,7 @@ These command Builds into either build/Debug or build/Release.
 
 Build with **CMAKE** with following command: 
 
-> cmake -G Ninka -S . -B build/Debug 
+> cmake -G Ninja -S . -B build/Debug 
 
 or for a Release Build:
 
