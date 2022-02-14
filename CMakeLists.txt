@@ -32,6 +32,9 @@ target_include_directories(${BUILDNAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inclu
 target_include_directories(${BUILDNAME} PUBLIC ${SDL2_INCLUDE_DIRS})
 target_link_libraries(${BUILDNAME} PUBLIC ${SDL2_LIBRARIES})
 
+# Comment: To ship the game in a self contained package use rpath
+# set(CMAKE_BUILD_RPATH $ORIGIN)
+
 # Linker Options needed for Windows Builds
 if(WIN32)
     target_link_options(${BUILDNAME} PRIVATE -mwin32 -mwindows)

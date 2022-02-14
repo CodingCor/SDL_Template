@@ -15,6 +15,14 @@ or for the Relase Build:
 
 These command Builds into either build/Debug or build/Release.
 
+### Portable Builds
+
+To deploy a portable game use:
+
+> set(CMAKE_BUILD_RPATH $ORIGIN)
+
+to set the rpath of the binary. This variable specifies where the binary searches for shared libraries.
+
 ## Windows Build
 
 - **MingW64** has to be installed.
